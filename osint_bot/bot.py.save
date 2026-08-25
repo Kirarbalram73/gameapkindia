@@ -1,0 +1,120 @@
+from telegram import Update
+from telegram.ext import Application, CommandHandler, ContextTypes
+from config import BOT_TOKEN
+import requests
+import phonenumbers
+from phonenumbers import carrier, geocoder
+
+async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "✅ OSINT Bot Online!\n\n"
+        "Commands:\n"
+        "/start\n"
+        "/help\n"
+        "/ip <IP>\n"
+        "/ifsc <IFSC>"
+    )
+
+
+async def help_cmd(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    await update.message.reply_text(
+        "/start - Start bot\n"
+        "/help - Help\n"
+        "/ip <IP address> - IP lookup\n"
+        "/ifsc <IFSC> - Bank & branch lookup"
+    )
+
+
+async def ip_lookup(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not context.args:
+        await update.message.reply_text("Usage: /ip 8.8.8.8")
+        return
+
+    ip = context.args[0]
+
+    try:
+        r = requests.get(
+            f"https://ip-api.com/json/{ip}",
+            timeout=10
+        )
+        data = r.json()
+
+        if data.get("status") != "success":
+            await update.message.reply_text("❌ Invalid IP")
+            return
+
+        msg = (
+            f"🌍 IP Lookup\n\n"
+            f"IP: {data['query']}\n"
+            f"Country: {data['country']}\n"
+            f"Region: {data['regionName']}\n"
+            f"City: {data['city']}\n"
+            f"ISP: {data['isp']}\n"
+            f"Timezone: {data['timezone']}"
+        )
+
+        await update.message.reply_text(msg)
+
+    except Exception as e:
+        await update.message.reply_text(f"❌ Error: {e}")
+
+
+async def ifsc_lookup(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    if not context.args:
+        await update.message.reply_text(
+            "Usage: /ifsc SBIN0001234"
+        )
+        return
+
+    ifsc = context.args[0].strip().upper()
+
+    try:
+        r = requests.get(
+            f"https://ifsc.razorpay.com/{ifsc}",
+            timeout=10
+        )
+
+        if r.status_code != 200:
+            await update.message.reply_text(
+                "❌ IFSC code not found."
+            )
+            return
+
+        data = r.json()
+
+        msg = (
+            "🏦 IFSC Lookup\n\n"
+            f"IFSC: {data.get('IFSC', ifsc)}\n"
+            f"Bank: {data.get('BANK', 'N/A')}\n"
+            f"Branch: {data.get('BRANCH', 'N/A')}\n"
+            f"Address: {data.get('ADDRESS', 'N/A')}\n"
+            f"City: {data.get('CITY', 'N/A')}\n"
+            f"District: {data.get('DISTRICT', 'N/A')}\n"
+            f"State: {data.get('STATE', 'N/A')}\n"
+            f"MICR: {data.get('MICR', 'N/A')}"
+        )
+
+        await update.message.reply_text(msg)
+
+    except requests.RequestException:
+        await update.message.reply_text(
+            "❌ Network/API error. Try again."
+        )
+    except Exception as e:
+        await update.message.reply_text(f"❌ Error: {e}")
+
+
+def main():
+    app = Application.builder().token(BOT_TOKEN).build()
+
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(CommandHandler("help", help_cmd))
+    app.add_handler(CommandHandler("ip", ip_lookup))
+    app.add_handler(CommandHandler("ifsc", ifsc_lookup))
+
+    print("Bot is running...")
+    app.run_polling()
+
+
+if __name__ == "__main__":
+    main()
