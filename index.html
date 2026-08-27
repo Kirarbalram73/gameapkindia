@@ -6,297 +6,76 @@
 <title>GameApkIndia - Official APK Hub & Gaming Downloads</title>
 <meta name="description" content="Download latest Android APK games from GameApkIndia safely and fast.">
 <link rel="icon" href="favicon.ico">
-
-<meta property="og:title" content="GameApkIndia - Official APK Hub">
-<meta property="og:description" content="Download latest Android APK games from GameApkIndia.">
-<meta property="og:type" content="website">
-<meta name="twitter:card" content="summary_large_image">
-
-<meta name="keywords" content="casino game, gameapkindia, slot games, game download, 777 game, in7 game, xx5 game, xx6 game, xx7 game, 9game, 8game, india2026 game, rajwin">
+<meta name="keywords" content="casino game, gameapkindia, slot games, game download, 777 game, in7 game, xx5 game, xx6 game, xx7 game, 9game, 8game, rajwin">
 <meta name="robots" content="index, follow">
-
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
   body { background: #f2f4f7; color: #333; }
-
-  header {
-    background: #121824;
-    padding: 14px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-  }
-  .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1100px;
-    margin: 0 auto;
-  }
-  .logo {
-    font-size: 20px;
-    font-weight: 800;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+  header { background: #121824; padding: 14px 20px; position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 6px rgba(0,0,0,0.2); }
+  .header-container { display: flex; align-items: center; justify-content: space-between; max-width: 1100px; margin: 0 auto; }
+  .logo { font-size: 20px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; }
   .logo span { color: #facc15; }
-  
-  .hero {
-    background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), #1e293b;
-    padding: 40px 20px;
-    text-align: center;
-    color: #fff;
-  }
+  .hero { background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), #1e293b; padding: 40px 20px; text-align: center; color: #fff; }
   .hero h1 { font-size: 24px; margin-bottom: 8px; font-weight: 800; color: #fff; }
   .hero p { font-size: 13px; color: #cbd5e1; max-width: 600px; margin: 0 auto 20px; line-height: 1.5; }
-  .search-box {
-    display: flex;
-    max-width: 500px;
-    margin: 0 auto;
-    background: #fff;
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-  }
-  .search-box input {
-    flex: 1;
-    padding: 12px 16px;
-    border: none;
-    outline: none;
-    font-size: 14px;
-  }
-  .search-box button {
-    background: #10b981;
-    color: #fff;
-    border: none;
-    padding: 0 20px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  main {
-    max-width: 1100px;
-    margin: 24px auto;
-    padding: 0 16px;
-  }
-  .section-title {
-    font-size: 18px;
-    font-weight: 700;
-    margin-bottom: 16px;
-    color: #1e293b;
-    border-left: 4px solid #10b981;
-    padding-left: 10px;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 16px;
-  }
-  .card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.06);
-    border: 1px solid #e2e8f0;
-    cursor: pointer;
-    transition: 0.2s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px;
-    text-align: center;
-    position: relative;
-  }
-  .card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  }
-  .card-badge {
-    position: absolute;
-    top: 8px; left: 8px;
-    background: #dc2626;
-    color: #fff;
-    font-size: 9px;
-    font-weight: bold;
-    padding: 2px 6px;
-    border-radius: 4px;
-    text-transform: uppercase;
-  }
-  .card-icon {
-    width: 75px; height: 75px;
-    border-radius: 14px;
-    overflow: hidden;
-    margin-bottom: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    background: #111;
-  }
-  .card-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .card-name {
-    font-size: 14px;
-    font-weight: 700;
-    color: #1e293b;
-    margin-bottom: 4px;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .card-version {
-    font-size: 12px;
-    color: #64748b;
-    margin-bottom: 8px;
-  }
-  .card-rating {
-    color: #f59e0b;
-    font-size: 12px;
-  }
-
-  .modal-overlay {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.7);
-    display: none;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    padding: 16px;
-  }
-  .modal {
-    background: #fff;
-    border-radius: 12px;
-    max-width: 500px;
-    width: 100%;
-    max-height: 90vh;
-    overflow-y: auto;
-    padding: 24px;
-    position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-  }
-  .close-modal {
-    position: absolute;
-    top: 16px; right: 16px;
-    background: #f1f5f9; border: none;
-    color: #333; font-size: 18px; width: 32px; height: 32px;
-    border-radius: 50%;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .modal-top {
-    display: flex; gap: 16px; align-items: flex-start;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 16px;
-    margin-bottom: 16px;
-  }
-  .modal-icon {
-    width: 80px; height: 80px;
-    border-radius: 16px;
-    overflow: hidden;
-    flex-shrink: 0;
-  }
+  .search-box { display: flex; max-width: 500px; margin: 0 auto; background: #fff; border-radius: 6px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+  .search-box input { flex: 1; padding: 12px 16px; border: none; outline: none; font-size: 14px; }
+  .search-box button { background: #10b981; color: #fff; border: none; padding: 0 20px; font-weight: bold; cursor: pointer; }
+  main { max-width: 1100px; margin: 24px auto; padding: 0 16px; }
+  .section-title { font-size: 18px; font-weight: 700; margin-bottom: 16px; color: #1e293b; border-left: 4px solid #10b981; padding-left: 10px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+  .card { background: #fff; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; cursor: pointer; transition: 0.2s; display: flex; flex-direction: column; align-items: center; padding: 16px; text-align: center; position: relative; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 6px 15px rgba(0,0,0,0.1); }
+  .card-badge { position: absolute; top: 8px; left: 8px; background: #dc2626; color: #fff; font-size: 9px; font-weight: bold; padding: 2px 6px; border-radius: 4px; text-transform: uppercase; }
+  .card-icon { width: 75px; height: 75px; border-radius: 14px; overflow: hidden; margin-bottom: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.15); background: #111; }
+  .card-icon img { width: 100%; height: 100%; object-fit: cover; }
+  .card-name { font-size: 14px; font-weight: 700; color: #1e293b; margin-bottom: 4px; width: 100%; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .card-version { font-size: 12px; color: #64748b; margin-bottom: 6px; }
+  .card-rating { color: #f59e0b; font-size: 12px; margin-bottom: 8px; }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; max-height: 48px; overflow: hidden; }
+  .mini-tag { background: #e0f2fe; color: #0369a1; font-size: 10px; padding: 2px 6px; border-radius: 3px; }
+  .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 16px; }
+  .modal { background: #fff; border-radius: 12px; max-width: 500px; width: 100%; max-height: 90vh; overflow-y: auto; padding: 24px; position: relative; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+  .close-modal { position: absolute; top: 16px; right: 16px; background: #f1f5f9; border: none; color: #333; font-size: 18px; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .modal-top { display: flex; gap: 16px; align-items: flex-start; border-bottom: 1px solid #e2e8f0; padding-bottom: 16px; margin-bottom: 16px; }
+  .modal-icon { width: 80px; height: 80px; border-radius: 16px; overflow: hidden; flex-shrink: 0; }
   .modal-icon img { width: 100%; height: 100%; object-fit: cover; }
   .modal-info h3 { font-size: 18px; color: #1e293b; margin-bottom: 4px; }
   .modal-info p { font-size: 12px; color: #64748b; margin-bottom: 6px; }
-  
-  .specs-box {
-    background: #f8fafc;
-    border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 16px;
-    font-size: 13px;
-    color: #475569;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-  }
+  .specs-box { background: #f8fafc; border-radius: 8px; padding: 12px; margin-bottom: 16px; font-size: 13px; color: #475569; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
   .specs-box div span { font-weight: bold; color: #1e293b; }
-
-  .desc-box {
-    font-size: 13px;
-    color: #475569;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-
-  .modal-btns {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  .dl-main-btn {
-    width: 100%;
-    padding: 14px;
-    background: #dc2626;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 15px;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-    text-decoration: none;
-    text-align: center;
-  }
+  .desc-box { font-size: 13px; color: #475569; line-height: 1.6; margin-bottom: 16px; }
+  .modal-tags-title { font-size: 13px; font-weight: bold; color: #1e293b; margin-bottom: 6px; }
+  .modal-tags-container { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+  .modal-tag { background: #e2e8f0; color: #334155; font-size: 11px; padding: 4px 8px; border-radius: 4px; }
+  .modal-btns { display: flex; flex-direction: column; gap: 10px; }
+  .dl-main-btn { width: 100%; padding: 14px; background: #dc2626; color: #fff; border: none; border-radius: 8px; font-weight: bold; font-size: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; text-align: center; }
   .dl-main-btn:hover { background: #b91c1c; }
-
-  .telegram-main-btn {
-    width: 100%;
-    padding: 14px;
-    background: #0088cc;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    font-size: 15px;
-    cursor: pointer;
-    display: flex; align-items: center; justify-content: center; gap: 8px;
-    text-decoration: none;
-    text-align: center;
-  }
+  .telegram-main-btn { width: 100%; padding: 14px; background: #0088cc; color: #fff; border: none; border-radius: 8px; font-weight: bold; font-size: 15px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; text-align: center; }
   .telegram-main-btn:hover { background: #006699; }
-
-  footer {
-    text-align: center;
-    padding: 30px;
-    color: #64748b;
-    font-size: 12px;
-    border-top: 1px solid #e2e8f0;
-    margin-top: 40px;
-  }
-
+  footer { text-align: center; padding: 30px; color: #64748b; font-size: 12px; border-top: 1px solid #e2e8f0; margin-top: 40px; }
   .empty-state { text-align: center; padding: 40px; color: #64748b; display: none; }
 </style>
 </head>
 <body>
-
 <header>
   <div class="header-container">
     <div class="logo">🎮 Game<span>Apk</span>India</div>
   </div>
 </header>
-
 <section class="hero">
   <h1>Download Android Games & APKs</h1>
   <p>Explore the latest Android games, official app downloads, and gaming updates all in one place.</p>
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="Search by name, version, size...">
+    <input type="text" id="searchInput" placeholder="Search by name, version, size, tags...">
     <button id="searchBtn">🔍</button>
   </div>
 </section>
-
 <main>
-  <div class="section-title">Latest Official Apps</div>
+  <div class="section-title">All Official Apps & Games</div>
   <div class="grid" id="grid"></div>
   <div class="empty-state" id="emptyState">No results found.</div>
 </main>
-
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal">
     <button class="close-modal" id="closeModalBtn" aria-label="Close">×</button>
@@ -304,33 +83,26 @@
       <div class="modal-icon" id="modalIcon"></div>
       <div class="modal-info">
         <h3 id="modalTitle">Game Name</h3>
-        <p id="modalCategory">Category</p>
+        <p id="modalCategory">Game / APK Download</p>
         <div class="card-rating" id="modalRating">★ 4.8/5</div>
       </div>
     </div>
-    
     <div class="specs-box">
-      <div>Update: <span id="modalUpdateDate">2026-08-25</span></div>
+      <div>Update: <span id="modalUpdateDate">Today</span></div>
       <div>Size: <span id="modalSize">38 MB</span></div>
-      <div>Version: <span id="modalVersion">1.4.8 (2026)</span></div>
+      <div>Version: <span id="modalVersion">Latest Version</span></div>
       <div>Platform: <span>Android</span></div>
     </div>
-
-    <div class="desc-box" id="modalDesc">
-      Official application platform offering an engaging digital entertainment experience.
-    </div>
-
+    <div class="desc-box" id="modalDesc">Official application platform offering an engaging digital entertainment experience.</div>
+    <div class="modal-tags-title">Related Tags:</div>
+    <div class="modal-tags-container" id="modalTagsContainer"></div>
     <div class="modal-btns">
       <a href="#" id="downloadLinkBtn" class="dl-main-btn" target="_blank" rel="noopener noreferrer">📥 DOWNLOAD APK</a>
       <a href="https://t.me/gameapkindia_shop" class="telegram-main-btn" target="_blank" rel="noopener noreferrer">📢 JOIN TELEGRAM CHANNEL</a>
     </div>
   </div>
 </div>
-
-<footer>
-  &copy; 2026 GameApkIndia. All rights reserved.
-</footer>
-
+<footer>&copy; 2026 GameApkIndia. All rights reserved.</footer>
 <script>
   const DATA = [
     { 
@@ -342,7 +114,8 @@
       img: "rajwin.png", 
       desc: "Official download link for Rajwin casino platform.",
       downloadUrl: "https://share-rxapq9cajg.rajwin.co/share/agent/AS60A8FJ?data=eyJtIjoyLCJsYW5nIjoiZW4iLCJpZCI6MX0=",
-      lastUpdated: "2026-08-25"
+      lastUpdated: "2026-08-25",
+      tags: ["rajwin", "rajwin apk", "rajwin apk download", "rajwin download", "rajwin game", "rajwin game apk", "rajwin game download", "rajwin latest version"]
     },
     { 
       id: "in7",
@@ -353,7 +126,8 @@
       img: "in7.png", 
       desc: "Official download link for In7 slot and crash game platform.",
       downloadUrl: "https://share.in7game.org/share/agent/AD60KD2N?data=eyJtIjoyLCJsYW5nIjoiZW4iLCJpZCI6MX0=",
-      lastUpdated: "2026-08-24"
+      lastUpdated: "2026-08-24",
+      tags: ["in7", "in7 apk", "in7 apk download", "in7 download", "in7 game", "in7 game apk", "in7 game download", "in7 latest version"]
     },
     { 
       id: "game8",
@@ -364,7 +138,8 @@
       img: "8-game-768x768.png", 
       desc: "Official download link for 8 Game arcade platform.",
       downloadUrl: "https://invite.8.buzz/?code=APTFDZS",
-      lastUpdated: "2026-08-23"
+      lastUpdated: "2026-08-23",
+      tags: ["8 game", "8 game apk", "8 game apk download", "8 game download", "8 game play", "8 game official", "8 game latest version"]
     },
     { 
       id: "xx6",
@@ -375,7 +150,8 @@
       img: "xx6-game-768x768.png", 
       desc: "Official download link for xx6 game platform.",
       downloadUrl: "https://invite.xx6.game/?code=YMRE1ZS",
-      lastUpdated: "2026-08-22"
+      lastUpdated: "2026-08-22",
+      tags: ["xx6", "xx6 apk", "xx6 apk download", "xx6 download", "xx6 game", "xx6 game apk", "xx6 game download", "xx6 latest version"]
     },
     { 
       id: "xx7",
@@ -386,7 +162,140 @@
       img: "Xx7-game-768x768.png", 
       desc: "Official download link for xx7 win platform.",
       downloadUrl: "https://invite.xx7.win/?code=R98900S",
-      lastUpdated: "2026-08-21"
+      lastUpdated: "2026-08-21",
+      tags: ["xx7", "xx7 apk", "xx7 apk download", "xx7 download", "xx7 game", "xx7 game apk", "xx7 game download", "xx7 latest version"]
+    },
+    { 
+      id: "game1",
+      name: "777.vip", 
+      version: "1.4.8 (2026)",
+      size: "42 MB", 
+      rating: 4.8, 
+      img: "777-vip.png", 
+      desc: "Download and play the latest trending mobile games and earn rewards securely.",
+      downloadUrl: "https://invite.7351689in777.vip/?code=X1FRIIS",
+      lastUpdated: "2026-08-26",
+      tags: ["777 vip", "777vip apk", "777vip apk download", "777vip download", "777vip game", "777vip game apk", "777vip game download", "777vip latest version"]
+    },
+    { 
+      id: "game2",
+      name: "9M Game", 
+      version: "2.1.0 (2026)",
+      size: "35 MB", 
+      rating: 4.7, 
+      img: "9m-game.png", 
+      desc: "Explore fast-paced action and card games on your Android device.",
+      downloadUrl: "https://invite.9mgame1.com/?code=JIQ289S",
+      lastUpdated: "2026-08-25",
+      tags: ["9m game", "9m game apk", "9m game apk download", "9m game download", "9m game play", "9m game official", "9m game latest version"]
+    },
+    { 
+      id: "game3",
+      name: "RVIP Game", 
+      version: "1.0.4 (2026)",
+      size: "39 MB", 
+      rating: 4.6, 
+      img: "rvip-game.png", 
+      desc: "Discover top-rated entertainment and secure mobile gaming apps.",
+      downloadUrl: "https://invite.rvip.one/?code=JTBXMQS",
+      lastUpdated: "2026-08-24",
+      tags: ["rvip game", "rvip apk", "rvip apk download", "rvip download", "rvip game apk", "rvip game download", "rvip latest version"]
+    },
+    { 
+      id: "game4",
+      name: "RR9 Game", 
+      version: "3.2.1 (2026)",
+      size: "45 MB", 
+      rating: 4.9, 
+      img: "rr9-game.png", 
+      desc: "Get verified APK updates and new version releases instantly.",
+      downloadUrl: "https://rr9game.games/?code=C39KYXS",
+      lastUpdated: "2026-08-23",
+      tags: ["rr9 game", "rr9 apk", "rr9 apk download", "rr9 download", "rr9 game apk", "rr9 game download", "rr9 latest version"]
+    },
+    { 
+      id: "game5",
+      name: "777IN Game", 
+      version: "1.5.0 (2026)",
+      size: "30 MB", 
+      rating: 4.5, 
+      img: "777in-game.png", 
+      desc: "Your ultimate destination for secure and trending mobile APKs in India.",
+      downloadUrl: "https://invite.777in.org/?code=U7EQHAS",
+      lastUpdated: "2026-08-22",
+      tags: ["777in game", "777in apk", "777in apk download", "777in download", "777in game apk", "777in game download", "777in latest version"]
+    },
+    { 
+      id: "game6",
+      name: "HU777 Game", 
+      version: "1.1.2 (2026)",
+      size: "33 MB", 
+      rating: 4.6, 
+      img: "hu777-game.png", 
+      desc: "Play exciting online games with smooth performance and safe downloads.",
+      downloadUrl: "https://invite.hu777.club/?code=28YO58S",
+      lastUpdated: "2026-08-21",
+      tags: ["hu777 game", "hu777 apk", "hu777 apk download", "hu777 download", "hu777 game apk", "hu777 game download", "hu777 latest version"]
+    },
+    { 
+      id: "game7",
+      name: "MM9 Game", 
+      version: "2.0.1 (2026)",
+      size: "41 MB", 
+      rating: 4.8, 
+      img: "mm9-game.png", 
+      desc: "Top entertainment platform featuring quick matches and fun experiences.",
+      downloadUrl: "https://invite.mm9.club/?code=SKG1EES",
+      lastUpdated: "2026-08-20",
+      tags: ["mm9 game", "mm9 apk", "mm9 apk download", "mm9 download", "mm9 game apk", "mm9 game download", "mm9 latest version"]
+    },
+    { 
+      id: "game8",
+      name: "yy.game", 
+      version: "1.3.5 (2026)",
+      size: "36 MB", 
+      rating: 4.7, 
+      img: "yy-game.png", 
+      desc: "Immersive adventures and high-graphics mobile gaming applications.",
+      downloadUrl: "https://invite.yygame77.com/?code=2WUSDSS",
+      lastUpdated: "2026-08-19",
+      tags: ["yy game", "yygame apk", "yygame apk download", "yygame download", "yygame game", "yygame game apk", "yygame latest version"]
+    },
+    { 
+      id: "game9",
+      name: "IND9 App", 
+      version: "1.0.0 (2026)",
+      size: "28 MB", 
+      rating: 4.4, 
+      img: "ind9-app.png", 
+      desc: "Discover popular card and casual games built specifically for mobile users.",
+      downloadUrl: "https://share.ind9.app/share/agent/AD64C4GQ?data=eyJtIjoyLCJsYW5nIjoiZW4iLCJpZCI6MX0=",
+      lastUpdated: "2026-08-18",
+      tags: ["ind9 app", "ind9 apk", "ind9 apk download", "ind9 download", "ind9 game", "ind9 game apk", "ind9 latest version"]
+    },
+    { 
+      id: "game10",
+      name: "XX5 Game", 
+      version: "2.2.4 (2026)",
+      size: "44 MB", 
+      rating: 4.6, 
+      img: "xx5-game.png", 
+      desc: "Fast and secure application downloads with easy installation guides.",
+      downloadUrl: "https://invite.xx5.game/?code=J7DT6KS",
+      lastUpdated: "2026-08-17",
+      tags: ["xx5 game", "xx5 apk", "xx5 apk download", "xx5 download", "xx5 game apk", "xx5 game download", "xx5 latest version"]
+    },
+    { 
+      id: "game11",
+      name: "KA9 Club", 
+      version: "1.8.9 (2026)",
+      size: "37 MB", 
+      rating: 4.7, 
+      img: "ka9-club.png", 
+      desc: "Join the ultimate mobile gaming community and download latest updates.",
+      downloadUrl: "https://invite.ka9.club/?code=QGDO51S",
+      lastUpdated: "2026-08-16",
+      tags: ["ka9 club", "ka9 apk", "ka9 apk download", "ka9 download", "ka9 game", "ka9 game apk", "ka9 latest version"]
     }
   ];
 
@@ -405,17 +314,23 @@
       return;
     }
     emptyState.style.display = 'none';
-    grid.innerHTML = items.map((item) => `
-      <div class="card" data-id="${item.id}">
-        <div class="card-badge">NEW</div>
-        <div class="card-icon">
-          <img src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/75?text=Game'">
+    
+    grid.innerHTML = items.map((item) => {
+      const tagsHtml = item.tags ? item.tags.slice(0, 2).map(t => `<span class="mini-tag">#${t}</span>`).join('') : '';
+      
+      return `
+        <div class="card" data-id="${item.id}">
+          <div class="card-badge">NEW</div>
+          <div class="card-icon">
+            <img src="${item.img}" alt="${item.name}" loading="lazy" onerror="this.src='https://via.placeholder.com/75?text=Game'">
+          </div>
+          <div class="card-name">${item.name}</div>
+          <div class="card-version">Latest Version</div>
+          <div class="card-rating">⭐ ${item.rating}/5</div>
+          <div class="card-tags">${tagsHtml}</div>
         </div>
-        <div class="card-name">${item.name}</div>
-        <div class="card-version">Latest Version</div>
-        <div class="card-rating">⭐ ${item.rating}/5</div>
-      </div>
-    `).join('');
+      `;
+    }).join('');
 
     document.querySelectorAll('.card').forEach(card => {
       card.addEventListener('click', () => {
@@ -434,21 +349,19 @@
     const img = document.createElement("img");
     img.src = app.img;
     img.alt = app.name;
-    img.style.width = "100%";
-    img.style.height = "100%";
-    img.style.objectFit = "cover";
-    img.style.borderRadius = "12px";
     img.onerror = () => { img.src = 'https://via.placeholder.com/80?text=Game'; };
     modalIcon.appendChild(img);
     
     document.getElementById('modalTitle').innerText = app.name;
-    document.getElementById('modalCategory').innerText = "Game / APK Download";
     document.getElementById('modalSize').innerText = app.size;
     document.getElementById('modalVersion').innerText = app.version;
     document.getElementById('modalUpdateDate').innerText = app.lastUpdated;
     document.getElementById('modalRating').innerText = `★ ${app.rating}/5`;
     document.getElementById('modalDesc').innerText = app.desc;
     
+    const modalTagsContainer = document.getElementById('modalTagsContainer');
+    modalTagsContainer.innerHTML = app.tags ? app.tags.map(tag => `<span class="modal-tag">#${tag}</span>`).join('') : '';
+
     const dlBtn = document.getElementById('downloadLinkBtn');
     if (app.downloadUrl) {
       dlBtn.href = app.downloadUrl;
@@ -474,7 +387,6 @@
     });
   }
 
-  // Escape key support to close modal
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeModal();
   });
@@ -485,8 +397,7 @@
     return DATA.filter(item => 
       item.name.toLowerCase().includes(query) || 
       item.desc.toLowerCase().includes(query) ||
-      item.version.toLowerCase().includes(query) ||
-      item.size.toLowerCase().includes(query)
+      (item.tags && item.tags.some(tag => tag.toLowerCase().includes(query)))
     );
   }
 
@@ -502,9 +413,8 @@
     searchBtn.addEventListener('click', applyFilters);
   }
 
-  // Initial render
   renderCards(DATA);
 </script>
-
 </body>
 </html>
+
